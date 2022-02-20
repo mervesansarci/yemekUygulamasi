@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable name="sepetFragmentNesnesi" type="com.denemeler.yemekuygulamasi.fragment.SepetFragment" />
+        <variable name="sepetAdapter" type="com.denemeler.yemekuygulamasi.adapter.SepetUrunlerAdapter" />
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SepetFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSepet"
+        android:adapter="@{sepetAdapter}"
+        android:layout_width="410dp"
+        android:layout_height="381dp"
+        tools:listitem="@layout/sepet_card_tasarim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewToplamTutar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="298dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvSepet" />
+
+    <Button
+        android:id="@+id/buttonSiparisOnay"
+        android:layout_width="333dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="64dp"
+        android:text="siparişi onayla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewToplamTutar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

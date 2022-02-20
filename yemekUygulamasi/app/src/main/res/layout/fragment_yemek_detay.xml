@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        
+        <variable name="yemekDetayFragmentNesnesi" type="com.denemeler.yemekuygulamasi.fragment.YemekDetayFragment" />
+        <variable name="yemekNesnesi" type="com.denemeler.yemekuygulamasi.entity.Yemekler" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.YemekDetayFragment">
+
+        <ImageView
+            android:id="@+id/imageViewAzalt"
+
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="81dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSiparisSayi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewYemek"
+            app:srcCompat="@drawable/cikart" />
+
+        <ImageView
+            android:id="@+id/imageViewArttir"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="161dp"
+            android:layout_marginEnd="82dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewSiparisSayi"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewYemek"
+            app:srcCompat="@drawable/ekle" />
+
+        <ImageView
+            android:id="@+id/imageViewYemek"
+            android:layout_width="301dp"
+            android:layout_height="196dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewYemekFiyat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text='@{Integer.toString(yemekNesnesi.yemek_fiyat) + "₺"}'
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewYemekAdi" />
+
+        <TextView
+            android:id="@+id/textViewSiparisSayi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="TextView"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewArttir"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAzalt"
+            app:layout_constraintTop_toBottomOf="@+id/textViewYemekFiyat" />
+
+        <TextView
+            android:id="@+id/textViewYemekAdi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@{yemekNesnesi.yemek_adi}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewYemek" />
+
+        <Button
+            android:id="@+id/buttonSepeteEkle"
+            android:layout_width="330dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="60dp"
+            android:text="Sepete Ekle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSiparisSayi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

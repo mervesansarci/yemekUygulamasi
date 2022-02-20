@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.denemeler.yemekuygulamasi.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/anasayfaToYemekDetay"
+            app:destination="@id/yemekDetayFragment" />
+        <argument
+            android:name="yemek"
+            app:argType="com.denemeler.yemekuygulamasi.entity.Yemekler" />
+        <action
+            android:id="@+id/anasayfaToSepet"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.denemeler.yemekuygulamasi.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <argument
+            android:name="yemek"
+            app:argType="com.denemeler.yemekuygulamasi.entity.Yemekler" />
+        <action
+            android:id="@+id/sepetToOnay"
+            app:destination="@id/siparisOnayFragment"
+            app:popUpTo="@id/sepetFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="sepet"
+            app:argType="com.denemeler.yemekuygulamasi.entity.Sepet" />
+    </fragment>
+    <fragment
+        android:id="@+id/yemekDetayFragment"
+        android:name="com.denemeler.yemekuygulamasi.fragment.YemekDetayFragment"
+        android:label="fragment_yemek_detay"
+        tools:layout="@layout/fragment_yemek_detay" >
+        <argument
+            android:name="yemek"
+            app:argType="com.denemeler.yemekuygulamasi.entity.Yemekler" />
+        <action
+            android:id="@+id/detayToSepet"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/siparisOnayFragment"
+        android:name="com.denemeler.yemekuygulamasi.fragment.SiparisOnayFragment"
+        android:label="fragment_siparis_onay"
+        tools:layout="@layout/fragment_siparis_onay" />
+</navigation>
